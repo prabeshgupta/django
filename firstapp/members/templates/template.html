@@ -3,12 +3,17 @@
 
 <body>
 
-    {% for x in fruits %}
-    <h1>{{ x }}</h1>
-    {% endfor %}
+    {% include "mymenu.html" with me="SERVICE" sponsor="SPONSER" %}
 
-    <p>In views.py you can see what the fruits variable looks like.</p>
+    <ul>
+        {% for x in mymember %}
+        <li>{{ x.firstname }}</li>
+        {% endfor %}
+    </ul>
 
+    {% comment "include a template inside the current template."%}
+    {% include 'footer.html' %}
+    {% endcomment%}
 </body>
 
 </html>
